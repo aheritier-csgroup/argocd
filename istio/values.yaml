@@ -1,2 +1,7 @@
+global:
+  outboundTrafficPolicy.mode: REGISTRY_ONLY
 gateway:
-  foo: ""
+  enabled: true
+  istio-ingressgateway.enabled: true
+  istio-egressgateway.enabled: true
+  
