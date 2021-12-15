@@ -1,9 +1,1 @@
 
-meshConfig:
-  outboundTrafficPolicy:
-      mode: REGISTRY_ONLY
-components:
-  ingressGateways:
-  - name: istio-ingressgateway
-      enabled: true
-      
