@@ -1,1 +1,16 @@
-istio/base
+---
+apiVersion: v2
+name: argo-istio
+type: application
+version: 1.0
+appVersion: 1.12.1 
+dependencies:
+- name: istio/base
+  version: "1.12.1" 
+  repository: "https://istio-release.storage.googleapis.com/charts"
+- name: istio/istiod
+  version: "1.12.1" 
+  repository: "https://istio-release.storage.googleapis.com/charts"
+- name: istio/gateway
+  version: "1.12.1" 
+  repository: "https://istio-release.storage.googleapis.com/charts"
