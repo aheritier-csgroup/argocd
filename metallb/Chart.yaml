@@ -4,6 +4,6 @@ name: mettalb
 type: application
 version: 1.0
 dependencies:
-- name: bitnami/metallb
+- name: metallb
   version: "0.11.0"
   repository: "https://charts.bitnami.com/bitnami"
