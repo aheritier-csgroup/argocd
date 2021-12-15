@@ -4,7 +4,7 @@ metadata:
   name: mettallb
   namespace: argocd
 spec:
-  project: infra
+  project: default
 
   source:
     repoURL: https://github.com/aheritier-csgroup/argocd.git
