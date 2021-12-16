@@ -1,20 +1,20 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: istio
+  name: istio-operator
   namespace: argocd
   annotations:
-    argocd.argoproj.io/sync-wave: "-5"
+    argocd.argoproj.io/sync-wave: "-10"
 spec:
   project: default
 
   source:
     repoURL: https://github.com/aheritier-csgroup/argocd.git
     targetRevision: HEAD
-    path: istio
+    path: istio-operator/
   destination: 
     server: https://kubernetes.default.svc
-    namespace: istio-system
+    namespace: istio-operator
 
   syncPolicy:
     syncOptions:
