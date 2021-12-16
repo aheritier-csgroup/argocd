@@ -18,6 +18,8 @@ spec:
     chart: istio-operator
   project: default
   syncPolicy:
+    syncOptions:
+    - CreateNamespace=true
     automated:
       prune: false
       selfHeal: false
