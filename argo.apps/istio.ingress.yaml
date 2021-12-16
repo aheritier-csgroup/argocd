@@ -6,7 +6,7 @@ metadata:
     argocd.argoproj.io/sync-wave: "-20"
 spec:
   destination:
-    name: 'istio-ingressgateway'
+    name: ''
     namespace: istio-system
     server: 'https://kubernetes.default.svc'
   source:
