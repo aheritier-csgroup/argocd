@@ -14,7 +14,7 @@ spec:
     path: istio-operator/
   destination: 
     server: https://kubernetes.default.svc
-    namespace: istio-system
+    namespace: istio-oeprator
 
   syncPolicy:
     syncOptions:
