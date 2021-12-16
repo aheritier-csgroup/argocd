@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: namespaces
+  name: argocd-cfg
   namespace: argocd
   annotations:
     argocd.argoproj.io/sync-wave: "-50"
@@ -11,16 +11,15 @@ spec:
   source:
     repoURL: https://github.com/aheritier-csgroup/argocd.git
     targetRevision: HEAD
-    path: namespaces
+    path: argocd-cfg
   destination: 
     server: https://kubernetes.default.svc
     namespace: argocd
 
   syncPolicy:
     syncOptions:
-    - CreateNamespace=false
+    - CreateNamespace=true
 
     automated:
       selfHeal: true
-      allowEmpty: true
       prune: true

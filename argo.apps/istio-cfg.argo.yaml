@@ -1,26 +1,25 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: namespaces
+  name: istio-cfg
   namespace: argocd
   annotations:
-    argocd.argoproj.io/sync-wave: "-50"
+    argocd.argoproj.io/sync-wave: "-30"
 spec:
   project: default
 
   source:
     repoURL: https://github.com/aheritier-csgroup/argocd.git
     targetRevision: HEAD
-    path: namespaces
+    path: istio-cfg
   destination: 
     server: https://kubernetes.default.svc
-    namespace: argocd
+    namespace: istio-system
 
   syncPolicy:
     syncOptions:
-    - CreateNamespace=false
+    - CreateNamespace=true
 
     automated:
       selfHeal: true
-      allowEmpty: true
       prune: true
