@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: Istio-base
+  name: istio-base
 spec:
   destination:
     name: ''
@@ -23,7 +23,7 @@ spec:
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: Istio-istiod
+  name: istio-istiod
 spec:
   destination:
     name: ''
