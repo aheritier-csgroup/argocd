@@ -1,0 +1,34 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: apisix
+spec:
+  destination:
+    name: ''
+    namespace: ingress-apisix
+    server: 'https://kubernetes.default.svc'
+  source:
+    path: ''
+    repoURL: 'https://charts.apiseven.com'
+    targetRevision: 0.7.2
+    chart: apisix
+    helm:
+      parameters:
+        - name: gateway.ingress.enabled
+          value: 'true'
+        - name: gateway.type
+          value: LoadBalancer
+        - name: ingress-controller.enabled
+          value: 'true'
+        - name: gateway.tls.enabled
+          value: 'true'
+        - name: dashboard.enabled
+          value: 'true'
+  project: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
+
