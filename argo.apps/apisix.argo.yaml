@@ -10,7 +10,7 @@ spec:
   source:
     path: ''
     repoURL: 'https://charts.apiseven.com'
-    targetRevision: 0.7.1
+    targetRevision: 0.7.0
     chart: apisix
     helm:
       parameters:
