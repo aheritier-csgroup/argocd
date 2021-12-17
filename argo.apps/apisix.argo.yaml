@@ -24,6 +24,8 @@ spec:
           value: 'true'
         - name: dashboard.enabled
           value: 'true'
+        - name: etcd.persistence.size
+          value: '1Gi'
   project: default
   syncPolicy:
     automated:
