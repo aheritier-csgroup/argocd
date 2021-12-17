@@ -1,25 +1,28 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: istio-cfg
+  name: rook-cfg
   namespace: argocd
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
   annotations:
-    argocd.argoproj.io/sync-wave: "-30"
+    argocd.argoproj.io/sync-wave: "-40"
 spec:
   project: default
 
   source:
     repoURL: https://github.com/aheritier-csgroup/argocd.git
     targetRevision: HEAD
-    path: istio-cfg
+    path: rook-cfg
   destination: 
     server: https://kubernetes.default.svc
-    namespace: istio-system
+    namespace: rook-ceph
 
   syncPolicy:
     syncOptions:
-    - CreateNamespace=true
+    - CreateNamespace=false
 
     automated:
       selfHeal: true
+      allowEmpty: true
       prune: true
