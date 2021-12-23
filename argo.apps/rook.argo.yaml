@@ -4,6 +4,7 @@ metadata:
   name: rook-ceph
   annotations:
     argocd.argoproj.io/sync-wave: "-45"
+    argocd.argoproj.io/hook: PreSync
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
